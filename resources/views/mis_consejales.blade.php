@@ -16,7 +16,7 @@
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons black">menu</i></a>
           <a href="#" class="brand-logo center grey darken-1">Logo</a>
           <ul class="right hide-on-med-and-down">
-            <li style="width:170px;" class="blue"><i class="material-icons left">person</i><a href="sass.html">Mis Consejales</a></li>
+            <li style="width:170px;" class="blue"><i class="material-icons left">person</i><a href="consejales">Mis Consejales</a></li>
             <!-- Modal Trigger -->
             <li class="pink lighten-4"><a class="modal-trigger" href="#sesion"><i class="material-icons left ">account_circle</i>Iniciar Sesión</a></li>
           </ul>

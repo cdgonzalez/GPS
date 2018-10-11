@@ -17,7 +17,7 @@
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons black">menu</i></a>
           <a href="#" class="brand-logo center grey darken-1">Logo</a>
           <ul class="right hide-on-med-and-down">
-            <li style="width:170px;" class="blue"><i class="material-icons left">person</i><a href="sass.html">Mis Consejales</a></li>
+            <li style="width:170px;" class="blue"><i class="material-icons left">person</i><a href="consejales">Mis Consejales</a></li>
             <!-- Modal Trigger -->
             <li class="pink lighten-4"><a class="modal-trigger" href="#sesion"><i class="material-icons left ">account_circle</i>Iniciar Sesión</a></li>
           </ul>
@@ -31,7 +31,7 @@
   <!-- Modal -->
 
   <!-- Modal Structure -->
-  <div style="width: 25%; height: 60%;" id="sesion" class="modal">
+  <div style="width: 30%; height: 60%;" id="sesion" class="modal">
     <div class="modal-content">
       <h4 style="color: #e0e0e0;">Iniciar Sesión</h4>
       <form action="inicio.php" method="POST">
@@ -41,7 +41,7 @@
 
           </div>
           <div class="input-field">
-              <input id="pin" type="text" class="validate"><br>
+              <input id="pin" type="password" class="validate"><br>
               <label for="pin">PIN</label>
           </div>
 
@@ -51,7 +51,7 @@
       <div class="row">
 
           <div class="col m12">
-            <input style="background-color: #1e88e5;" class="col m12 btn" type="submit" value="Iniciar Sesión"><br>
+            <input style="background-color: #1e88e5;" id="ingresar" class="col m12 btn" type="submit" value="Iniciar Sesión"><br>
           </div>
           <div class="col m12"><a style="background-color: #e0e0e0;" href="#!" class="modal-close col m12 waves-effect waves-green btn">Cancelar</a>
           </div>
@@ -163,4 +163,5 @@
             });
 
     </script>
+    <script src="{{ URL::asset('js/login.js') }}"></script>
 </html>

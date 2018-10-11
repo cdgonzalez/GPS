@@ -16,18 +16,35 @@
     <nav class="menu grey lighten-2" data-target="menu">
         <div class="nav-wrapper">
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons black">menu</i></a>
-          <a href="#" class="brand-logo left grey darken-1" style="margin-left: 2%;">Logo</a>
+          <a href="#" class="brand-logo left grey darken-1" style="margin-left: 7%;">Logo</a>
           <ul class="right hide-on-med-and-down">
-            <li style="width:140px;" class="deep-purple lighten-3"><i class="material-icons left">cloud_circle</i><a href="sass.html">Votar</a></li>
-            <li style="width:140px;" class="lime ligthten-1"><i class="material-icons left">cloud_circle</i><a href="sass.html">Votaciones</a></li>
-            <li style="width:140px;" class="purple lighten-3"><i class="material-icons left">cloud_circle</i><a href="sass.html">Candidatos</a></li>
-            <li style="width:140px;" class="green accent-3"><i class="material-icons left">cloud_circle</i><a href="sass.html">Usuarios</a></li>
-            <li style="width:140px;" class="light-blue accent-3"><i class="material-icons left">cloud_circle</i><a href="sass.html">Consejales</a></li>
+            <li style="width:140px;" class="deep-purple lighten-3"><i class="material-icons left">cloud_circle</i><a href="">Votar</a></li>
+            <li style="width:140px;" class="lime ligthten-1"><i class="material-icons left">cloud_circle</i><a href="">Votaciones</a></li>
+            <li style="width:140px;" class="purple lighten-3"><i class="material-icons left">cloud_circle</i><a href="">Candidatos</a></li>
+            <li style="width:140px;" class="green accent-3"><i class="material-icons left">cloud_circle</i><a href="">Usuarios</a></li>
+            <li style="width:140px;" class="light-blue accent-3"><i class="material-icons left">cloud_circle</i><a href="">Consejales</a></li>
             <li style="width:140px;" class="pink accent-2"><i class="material-icons left">cloud_circle</i><a class="dropdown-trigger" href="#" data-target="opciones">[1515151]</a></li>
 
           </ul>
         </div>
     </nav>
+</div>
+
+    <!-- SideNav -->
+
+<div class="row">
+    <ul class="sidenav" id="mobile-demo">
+        <div class="">
+            <ul class="collapsible grey darken-3">
+             <li class="deep-purple lighten-3"><i class="material-icons left">cloud_circle</i><a href="">Votar</a></li>
+             <li class="lime ligthten-1"><i class="material-icons left">cloud_circle</i><a href="">Votaciones</a></li>
+             <li class="purple lighten-3"><i class="material-icons left">cloud_circle</i><a href="">Candidatos</a></li>
+             <li class="green accent-3"><i class="material-icons left">cloud_circle</i><a href="">Usuarios</a></li>
+             <li class="light-blue accent-3"><i class="material-icons left">cloud_circle</i><a href="">Consejales</a></li>
+             <li class="pink accent-2"><i class="material-icons left">cloud_circle</i><a class="dropdown-trigger" href="#" data-target="opciones">[1515151]</a></li>
+            </ul>
+        </div>
+    </ul>
 </div>
 
 <!--Dropdown Contenido-->

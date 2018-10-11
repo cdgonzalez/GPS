@@ -17,3 +17,9 @@ Route::get('/', function () {
 });
 */
 Route::get('/', 'PrincipalController@Principal');
+
+Route::get('/consejales', function () {
+    return view('mis_consejales');
+});
+
+
