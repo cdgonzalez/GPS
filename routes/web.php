@@ -16,7 +16,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-Route::get('/', 'PrincipalController@Login');
+Route::get('/', 'PrincipalController@Principal');
+
+Route::post('/login', 'PrincipalController@Login');
+
 
 Route::get('/consejales', function () {
     return view('mis_consejales');

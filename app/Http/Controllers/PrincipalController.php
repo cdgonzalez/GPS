@@ -12,18 +12,24 @@ use App\Http\Requests;
 class PrincipalController extends Controller
 {
     public function Principal(){
-
+        return view ('principal');
     }
 
     //login
 
-       protected function Login()
+       public function Login()
     {
-        return view ('principal');
 
-        $users = DB::table('alumnos')->select('matricula','PIN')->get();
 
-        return $users;
+
+        $matricula = $this->input->post('mat');
+        $pin = $this->input->post('p');
+        $users = DB::table('alumnos')->where([['matricula','=',$maticula].
+                                             ['PIN','=',$pin],
+                                             ])->get();
+
+        echo "si";
+           return $users;
     }
 
 

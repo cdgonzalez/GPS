@@ -34,7 +34,7 @@
   <div style="width: 30%; height: 60%;" id="sesion" class="modal">
     <div class="modal-content">
       <h4 style="color: #e0e0e0;">Iniciar Sesión</h4>
-      <form action="Login" method="POST">
+      <form action="/login" method="POST">
           <div class="input-field">
               <input name="user" id="mat" type="text" class="validate"><br>
               <label for="mat">Matricula</label>

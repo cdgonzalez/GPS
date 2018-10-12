@@ -14,18 +14,25 @@ $(document).ready(function(){
         }else if(pin.length == 0){
             alert("Campo Vacio");
 
-        }else{
-
-          var dato = {
-              matr:matricula,
-              p:pin,
-          };
-
-            $.ajax({
-               url: ""
-
-            });
         }
+
+        var dato = {
+            mat:matricula,
+            p:pin,
+        }
+
+         $.ajax({
+        url: "login",
+        type: 'POST',
+        data: dato,
+       // dataType:"JSON",
+        success: function(msg) {
+         alert(msg);
+
+
+        }
+
+    });
 
     });
 });
