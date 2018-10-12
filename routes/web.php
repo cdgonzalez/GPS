@@ -16,10 +16,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-Route::get('/', 'PrincipalController@Principal');
+Route::get('/', 'PrincipalController@Login');
 
 Route::get('/consejales', function () {
     return view('mis_consejales');
 });
+
+Route::get('login', 'Auth\PrincipalController@getLogin');
+Route::post('login', ['as' =>'login', 'uses' => 'Auth\PrincipalController@postLogin']);
+Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\PrincipalController@getLogout']);
 
 

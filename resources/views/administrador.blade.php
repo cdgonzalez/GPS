@@ -36,12 +36,18 @@
     <ul class="sidenav" id="mobile-demo">
         <div class="">
             <ul class="collapsible grey darken-3">
-             <li class="deep-purple lighten-3"><i class="material-icons left">cloud_circle</i><a href="">Votar</a></li>
-             <li class="lime ligthten-1"><i class="material-icons left">cloud_circle</i><a href="">Votaciones</a></li>
-             <li class="purple lighten-3"><i class="material-icons left">cloud_circle</i><a href="">Candidatos</a></li>
-             <li class="green accent-3"><i class="material-icons left">cloud_circle</i><a href="">Usuarios</a></li>
-             <li class="light-blue accent-3"><i class="material-icons left">cloud_circle</i><a href="">Consejales</a></li>
              <li class="pink accent-2"><i class="material-icons left">cloud_circle</i><a class="dropdown-trigger" href="#" data-target="opciones">[1515151]</a></li>
+             <h6 class="white">Opciones Administrativas</h6>
+             <li class="light-blue accent-3"><i class="material-icons left">cloud_circle</i><a href="">Consejales</a></li>
+             <li class="green accent-3"><i class="material-icons left">cloud_circle</i><a  class="dropdown-trigger" href="#" data-target="dropUser">Usuarios</a></li>
+             <li class="purple lighten-3"><i class="material-icons left">cloud_circle</i><a class="dropdown-trigger" href="#" data-target="dropCandi">Candidatos</a></li>
+             <li class="lime ligthten-1"><i class="material-icons left">cloud_circle</i><a class="dropdown-trigger" href="#" data-target="dropVot">Votaciones</a></li>
+             <li class="deep-purple lighten-3"><i class="material-icons left">cloud_circle</i><a href="">Votar</a></li>
+
+
+
+
+
             </ul>
         </div>
     </ul>
@@ -53,6 +59,23 @@
     <li><a href="#!">Cambiar Contraseña</a></li>
     <li><a href="#!">Cambiar Pregunta secreta</a></li>
 </ul>
+<!--Dropdown Usuarios-->
+<ul id="dropUser" class="dropdown-content">
+    <li><a href="#!">Registrar</a></li>
+    <li><a href="#!">Modificar</a></li>
+
+</ul>
+<!--Dropdown Candidatos-->
+<ul id="dropCandi" class="dropdown-content">
+    <li><a href="#!">Nuevo</a></li>
+    <li><a href="#!">Modificar</a></li>
+</ul>
+<!--Dropdown Votaciones-->
+<ul id="dropVot" class="dropdown-content">
+    <li><a href="#!">Nueva</a></li>
+    <li><a href="#!">Ver Votaciones</a></li>
+</ul>
+
 
 
 <div class="row">

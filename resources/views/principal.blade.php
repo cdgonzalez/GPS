@@ -34,14 +34,14 @@
   <div style="width: 30%; height: 60%;" id="sesion" class="modal">
     <div class="modal-content">
       <h4 style="color: #e0e0e0;">Iniciar Sesión</h4>
-      <form action="inicio.php" method="POST">
+      <form action="Login" method="POST">
           <div class="input-field">
-              <input id="mat" type="text" class="validate"><br>
+              <input name="user" id="mat" type="text" class="validate"><br>
               <label for="mat">Matricula</label>
 
           </div>
           <div class="input-field">
-              <input id="pin" type="password" class="validate"><br>
+              <input name="password" id="pin" type="password" class="validate"><br>
               <label for="pin">PIN</label>
           </div>
 

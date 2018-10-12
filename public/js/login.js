@@ -9,7 +9,7 @@ $(document).ready(function(){
             alert("Revisa tu matricula");
         }else if(isNaN(matricula)){
             alert("Matrícula invalida");
-        }else if((6 <= pin.length ) || (pin.length > 8)){
+        }else if(  pin.length < 6 || pin.length > 8 ){
             alert("PIN invalido");
         }else if(pin.length == 0){
             alert("Campo Vacio");

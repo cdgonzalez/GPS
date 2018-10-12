@@ -4,7 +4,7 @@ namespace Consejales\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminiController extends Controller
+class AdminController extends Controller
 {
     public function Administrador(){
         return view ('administrador');
