@@ -80,7 +80,7 @@
 
 <div class="row">
     <div class="col m12 l12">
-        <h2 class="left" style="color: #e0e0e0;">Bienvenido, [Nombre de Usuario]</h2>
+        <h2 class="left" style="color: #e0e0e0;">Bienvenido, {{$nombre}}</h2>
     </div>
     <div class="col m12 l12">
         <p>Desde esta pagina será capáz de controlar funciones administrativas de este sistema. <br>

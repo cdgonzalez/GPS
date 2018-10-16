@@ -7,29 +7,57 @@ use Illuminate\Http\Request;
 use DB;
 
 use App\Http\Requests;
+use JavaScript;
+use View;
 
 
 class PrincipalController extends Controller
 {
     public function Principal(){
+
         return view ('principal');
     }
 
     //login
 
-       public function Login()
+       public function Login(Request $request)
     {
+            $data = $request->all();
 
 
+        if(request()->ajax())
+            {
 
-        $matricula = $this->input->post('mat');
-        $pin = $this->input->post('p');
-        $users = DB::table('alumnos')->where([['matricula','=',$maticula].
-                                             ['PIN','=',$pin],
-                                             ])->get();
+            $matricula = $request->input('matricula');
+            $pin = $request->input('pin');
 
-        echo "si";
-           return $users;
+                $json['nombre']="";
+                $json['matricula']="";
+               /* $results = DB::select('select * from alumnos where matricula = :mat', ['mat' => $matricula], 'and pin = :p',['p' => $pin]);
+            */
+            $results = DB::select('select * from alumnos where matricula = :matricula', ['matricula' => $matricula],'and pin = :pin',['pin' => $pin]);
+
+//                $results= table('alumnos')->where([['matricula','=',$matricula].
+//                                             ['PIN','=',$pin],
+//                                             ])->get();
+
+                foreach ($results as $res)
+                {
+                    $json['nombre']=$res->nombre;
+                    $json['matricula']=$res->matricula;
+                    $json['administrador'] = $res->Admin;
+                }
+            /*if($json['administrador']== true){
+
+                return redirect()->route('administrador/{nombreAdmin}',[$json['nombre']]);
+            }else{
+                return redirect()->route('consejales')->with('Info',json_encode($json));
+            }*/
+
+            return json_encode($json);
+            //return  response()->json($results);
+        }
+
     }
 
 

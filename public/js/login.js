@@ -22,7 +22,7 @@ $(document).ready(function(){
         }
 
          $.ajax({
-        url: "login",
+        url: "Login",
         type: 'POST',
         data: dato,
        // dataType:"JSON",

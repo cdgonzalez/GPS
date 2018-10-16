@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Consejales</title>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('css/materialize.css') }}" media="screen,projection">
+
 </head>
 <body>
+<?php use \app\Http\Controllers\PrincipalController
+    ?>
+
 
 <!-- Menú navbar-->
 <div class="navbar-fixed">
@@ -34,14 +39,14 @@
   <div style="width: 30%; height: 60%;" id="sesion" class="modal">
     <div class="modal-content">
       <h4 style="color: #e0e0e0;">Iniciar Sesión</h4>
-      <form action="/login" method="POST">
+      <form action="Login" method="POST" id="formulario">
           <div class="input-field">
-              <input name="user" id="mat" type="text" class="validate"><br>
+              <input name="matricula" id="mat" type="text" class="validate"><br>
               <label for="mat">Matricula</label>
 
           </div>
           <div class="input-field">
-              <input name="password" id="pin" type="password" class="validate"><br>
+              <input name="pin" id="pin" type="password" class="validate"><br>
               <label for="pin">PIN</label>
           </div>
 
@@ -142,26 +147,78 @@
       </div>
 
 
+        @include ('footer')
 
 
 </body>
 
 
-       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
        <script src="{{ URL::asset('js/materialize.js') }}"></script>
+
+
     <script type="text/javascript">
 
         $(document).ready(function(){
 
-            $('.collapsible').collapsible();
-            $('.sidenav').sidenav();
-            $('.modal').modal();
-            $('.dropdown-trigger').dropdown({ hover: false, closeOnClick: false,            coverTrigger:      false, constrainWidth: false,inDuration: 500,
-                outDuration: 400, });
-                $('.slider').slider();
-                $('.carousel.carousel-slider').carousel({fullWidth: true});
+
+            $("#ingresar").click(function(){
+            var matricula = $("#mat").val();
+            var pin = $("#pin").val();
+
+            if(!(matricula.length == 8) ){
+                alert("Revisa tu matricula");
+            }else if(isNaN(matricula)){
+                alert("Matrícula invalida");
+            }else if(  pin.length < 6 || pin.length > 8 ){
+                alert("PIN invalido");
+            }else if(pin.length == 0){
+                alert("Campo Vacio");
+
+            }
+
+
+            $.ajaxSetup({
+              headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              }
             });
+            var formID = "#formulario";
+                //alert(matricula+ " "+pin);
+             $.ajax({
+
+                //url: $(formID).attr('action'),
+                url:'Login',
+                dataType:"JSON",
+                type: 'POST',
+                data: $('#formulario').serialize(),
+                success: function(response) {
+                    var matri = response.matricula;
+                    var nombre =response.nombre;
+                    var admin = response.administrador;
+                    if(admin == true){
+                        location.href = "administrador/"+nombre;
+
+                    }
+                    else{
+                        location.href = "consejales";
+                    }
+
+
+                },
+
+        });
+
+    });
+        $('.collapsible').collapsible();
+        $('.sidenav').sidenav();
+        $('.modal').modal();
+        $('.dropdown-trigger').dropdown({ hover: false, closeOnClick: false,            coverTrigger:      false, constrainWidth: false,inDuration: 500,
+            outDuration: 400, });
+            $('.slider').slider();
+            $('.carousel.carousel-slider').carousel({fullWidth: true});
+        });
 
     </script>
-    <script src="{{ URL::asset('js/login.js') }}"></script>
+<!--    <script src="{{ URL::asset('js/login.js') }}"></script>-->
 </html>

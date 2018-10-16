@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Http\Request;
+
+
 /*
 Route::get('/', function () {
     return view('welcome');
@@ -18,8 +21,11 @@ Route::get('/', function () {
 */
 Route::get('/', 'PrincipalController@Principal');
 
-Route::post('/login', 'PrincipalController@Login');
+Route::post('/Login', 'PrincipalController@Login');
 
+Route::get('/administrador/{nombreAdmin}', function($nombre){
+    return view('administrador')->with('nombre',$nombre);
+});
 
 Route::get('/consejales', function () {
     return view('mis_consejales');
