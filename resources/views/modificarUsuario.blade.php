@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Administrador</title>
+    <title>Modificar Consejal</title>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('css/materialize.css') }}" media="screen,projection">
+    <link rel="stylesheet" href="{{ URL::asset('css/modificarUsuario.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -46,8 +48,8 @@
             </ul>
             <!--Dropdown Usuarios-->
             <ul id='dropUserN' class="dropdown-content">
-                <li><a href="registrarUsu">Registrar</a></li>
-                <li><a href="modificarUsuario">Modificar</a></li>
+                <li><a href="#!">Registrar</a></li>
+                <li><a href="#!">Modificar</a></li>
 
             </ul>
             <!--Dropdown Consejales-->
@@ -76,8 +78,8 @@
             </ul>
             <!--Dropdown Usuarios-->
             <ul id='dropUser' class="dropdown-content">
-                <li><a href="registrarUsu">Registrar</a></li>
-                <li><a href="modificarUsuario">Modificar</a></li>
+                <li><a href="#!">Registrar</a></li>
+                <li><a href="#!">Modificar</a></li>
 
             </ul>
             <!--Dropdown Consejales-->
@@ -124,18 +126,103 @@
 </div>
 
 
-
-
-<div class="row">
-    <div class="col m12 l12">
-        <h2 class="left" style="color: #e0e0e0;">Bienvenido, {{$nombre}}</h2>
+    <div id="modal1" class="modal">
+      <div id="modal-content1" class="modal-content">
+      </div>
     </div>
-    <div class="col m12 l12">
-        <p>Desde esta pagina será capáz de controlar funciones administrativas de este sistema. <br>
-           Si existe mas de un administrador, él será capáz de hacer las mismas funciones que tú.</p>
 
+    <div id="modal1" class="modal">
+      <div id="modal-content1" class="modal-content">
+      </div>
     </div>
-</div>
+
+    <div id="modal2" class="modal">
+      <div id="modal-content2" class="modal-content">
+      <span>¿Estas Seguro?</span>
+      </div>
+      <div class="modal-footer">
+        <a class=" modal-action modal-close waves-effect waves-green btn-flat">cancelar</a>
+        <a id="si-borrar" class=" modal-action modal-close waves-effect waves-green btn-flat">Si</a>
+      </div>
+    </div>
+
+    <section class="container">
+      <div id="div-buscar" class="row">
+        <div class="col s12 m6 offset-m3">
+          <h5 id="titulo1">Modificar usuario</h5>
+
+          <div class="input-field">
+            <input id="busqueda" type="text" name="buscarMN" placeholder="Ingrese matricula o nombre a buscar...">
+          </div>
+
+          <div id="div-btn-buscar">
+            <button id="btn-buscar" class="btn green" href="#modal1">Buscar</button>
+          </div>
+
+          <div id="div-btn-cancelar">
+            <button id="btn-cancelar" class="btn grey">Cancelar</button>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="div-datos" class="row">
+        <div class="col s12 m3">
+          <button id="btn-regresar" class="btn grey">Regresar a busqueda</button>
+        </div>
+
+        <div class="col s12 m6">
+          <h5 id="titulo2">Datos de [Matricula, Nombre completo]</h5>
+
+          <div class="input-field">
+            <input id="nombre" type="text" name="nombre">
+          </div>
+
+          <div class="input-field">
+            <input id="matricula" type="text" name="matricula">
+          </div>
+
+          <div class="input-field">
+            <select id="carrera">
+              <option value="0" disabled selected>Carrera</option>
+              <option value="1">Ing. Sistemas Computacionales</option>
+              <option value="2">Ing. Informatica</option>
+              <option value="3">Ing. Tecnologias de la Informacion</option>
+              <option value="4">Ing. Industrial</option>
+              <option value="5">Ing. Gestion Empresarial</option>
+              <option value="6">Lic. Administracion</option>
+              <option value="7">Ing. Electrica</option>
+              <option value="8">Lic. Contador Publico</option>
+              <option value="9">Ing. Bioquimica</option>
+              <option value="10">Ing. Electronica</option>
+              <option value="11">Ing. Mecatronica</option>
+              <option value="12">Ing. Mecanica</option>
+              <option value="13">Ing. Materiales</option>
+            </select>
+          </div>
+
+          <div class="input-field">
+            <label for="administrador">
+              <input type="checkbox" id="administrador"/>
+              <span>Es administrador</span>
+            </label>
+          </div>
+
+          <div id="div-btn-actualizar">
+            <button id="btn-actualizar" class="btn green">Actualizar</button>
+          </div>
+
+          <div id="div-btn-borrar">
+            <button id="btn-borrar" class="btn red" href="#modal2">Borrar usuario</button>
+          </div>
+
+          <div id="div-btn-cancelar">
+            <button id="btn-cancelar2" class="btn grey">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
 <div class="page-footer white" style="margin-top:23%;  ">
      <div class="row">
@@ -153,19 +240,19 @@
 </body>
 
 
-       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-       <script src="{{ URL::asset('js/materialize.js') }}"></script>
+    <script src="{{ URL::asset('js/modificarUsuario.js') }}"></script>
+    <script src="{{ URL::asset('js/materialize.js') }}"></script>
+
     <script type="text/javascript">
 
         $(document).ready(function(){
+
 
             $('.collapsible').collapsible();
             $('.sidenav').sidenav();
             $('.modal').modal();
             $('.dropdown-trigger').dropdown({ hover: false, closeOnClick: false,            coverTrigger:      false, constrainWidth: false,inDuration: 500,
                 outDuration: 400, });
-                $('.slider').slider();
-                $('.carousel.carousel-slider').carousel({fullWidth: true});
             });
 
     </script>

@@ -27,6 +27,11 @@ Route::get('/administrador/{nombreAdmin}', function($nombre){
     return view('administrador')->with('nombre',$nombre);
 });
 
+Route::get('/modificarConse', 'PrincipalController@ModCon');
+
+Route::get('/modificarUsuario', 'PrincipalController@ModUs');
+Route::get('/registrarUsu', 'PrincipalController@RegUs');
+
 Route::get('/consejales', function () {
     return view('mis_consejales');
 });

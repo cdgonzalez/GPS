@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Administrador</title>
+    <title>Modificar Consejal</title>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('css/materialize.css') }}" media="screen,projection">
+    <link rel="stylesheet" href="{{ URL::asset('css/modificarConcejal.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -124,18 +126,99 @@
 </div>
 
 
-
-
-<div class="row">
-    <div class="col m12 l12">
-        <h2 class="left" style="color: #e0e0e0;">Bienvenido, {{$nombre}}</h2>
+    <div id="modal1" class="modal">
+      <div id="modal-content1" class="modal-content">
+      </div>
     </div>
-    <div class="col m12 l12">
-        <p>Desde esta pagina será capáz de controlar funciones administrativas de este sistema. <br>
-           Si existe mas de un administrador, él será capáz de hacer las mismas funciones que tú.</p>
 
+    <div id="modal2" class="modal">
+      <div id="modal-content2" class="modal-content">
+      <span>¿Estas Seguro?</span>
+      </div>
+      <div class="modal-footer">
+        <a class=" modal-action modal-close waves-effect waves-green btn-flat">cancelar</a>
+        <a id="si-borrar" class=" modal-action modal-close waves-effect waves-green btn-flat">Si</a>
+      </div>
     </div>
-</div>
+
+    <section class="container">
+      <div id="div-buscar" class="row">
+        <div class="col s12 m6 offset-m3">
+          <h5 id="titulo1">Modificar concejales</h5>
+
+          <div class="input-field">
+            <input id="busqueda" type="text" name="buscarMN" placeholder="Ingrese matricula o nombre de concejal a modificar">
+          </div>
+
+          <div id="div-btn-buscar">
+            <button id="btn-buscar" class="btn btns blue">Buscar</button>
+          </div>
+
+          <div id="div-btn-cancelar">
+            <button id="btn-cancelar" class="btn btns grey">Cancelar</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="div-datos" class="row">
+        <div class="col s12 m3">
+          <button id="btn-regresar" class="btn btns grey">Regresar a busqueda</button>
+        </div>
+
+        <div class="col s12 m6">
+          <h5 id="titulo2" class="center-align">Datos de [Matricula, Nombre completo]</h5>
+
+          <div class="card-image">
+            <img id="output" src="{{ URL::asset('img/sinFoto.jpg')}}">
+          </div>
+
+          <div id="buscarArchivo" class="file-field input-field">
+            <div class="btn">
+              <span>Buscar</span>
+              <input id="archivo" type="file" accept=".png,.jpg">
+            </div>
+            <div class="file-path-wrapper">
+              <input id="nombre-archivo" class="file-path validate" type="text" placeholder="Fotografia">
+            </div>
+          </div>
+
+          <div class="input-field col s12 m6">
+            <select id="periodo">
+              <option value="0" disabled selected>Periodo</option>
+              <option value="1">ENE-JUN</option>
+              <option value="2">AGO-DIC</option>
+            </select>
+          </div>
+
+          <div class="input-field col s12 m6">
+            <select id="ano">
+              <option value="0" disabled selected>Año</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="div-btn-añadir" class="col s12 m3">
+          <button id="btn-add" class="btn btns blue">Añadir propuesta</button>
+
+          <div id="div_propuestas" class="row"></div>
+        </div>
+
+        <div id="div-btn-datos" class="col s12 m6 offset-m3">
+          <div id="div-btn-actualizar">
+              <button id="btn-actualizar" class="btn btns blue">Actualizar</button>
+            </div>
+
+            <div id="div-btn-borrar">
+              <button id="btn-baja" class="btn btns red" href="#modal2">Dar de baja</button>
+            </div>
+
+            <div id="div-btn-cancelar">
+              <button id="btn-cancelar2" class="btn btns grey">Cancelar</button>
+            </div>
+          </div>
+        </div>
+    </section>
+
 
 <div class="page-footer white" style="margin-top:23%;  ">
      <div class="row">
@@ -153,19 +236,19 @@
 </body>
 
 
-       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-       <script src="{{ URL::asset('js/materialize.js') }}"></script>
+    <script src="{{ URL::asset('js/modificarConcejal.js') }}"></script>
+    <script src="{{ URL::asset('js/materialize.js') }}"></script>
+
     <script type="text/javascript">
 
         $(document).ready(function(){
+
 
             $('.collapsible').collapsible();
             $('.sidenav').sidenav();
             $('.modal').modal();
             $('.dropdown-trigger').dropdown({ hover: false, closeOnClick: false,            coverTrigger:      false, constrainWidth: false,inDuration: 500,
                 outDuration: 400, });
-                $('.slider').slider();
-                $('.carousel.carousel-slider').carousel({fullWidth: true});
             });
 
     </script>

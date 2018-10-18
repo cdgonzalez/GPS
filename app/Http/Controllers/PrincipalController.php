@@ -15,7 +15,7 @@ class PrincipalController extends Controller
 {
     public function Principal(){
 
-        return view ('principal');
+        return view ('modificarConsejal');
     }
 
     //login
@@ -35,7 +35,7 @@ class PrincipalController extends Controller
                 $json['matricula']="";
                /* $results = DB::select('select * from alumnos where matricula = :mat', ['mat' => $matricula], 'and pin = :p',['p' => $pin]);
             */
-            $results = DB::select('select * from alumnos where matricula = :matricula', ['matricula' => $matricula],'and pin = :pin',['pin' => $pin]);
+            $results = DB::select('select * from alumno where matricula = :matricula', ['matricula' => $matricula],'and pin = :pin',['pin' => $pin]);
 
 //                $results= table('alumnos')->where([['matricula','=',$matricula].
 //                                             ['PIN','=',$pin],
@@ -60,8 +60,17 @@ class PrincipalController extends Controller
 
     }
 
+    public function ModCon(){
+        return view ('modificarConsejal');
+    }
 
+    public function ModUs(){
+        return view('modificarUsuario');
+    }
 
+    public function RegUs(){
+        return view('registrarUsuario');
+    }
 
         public function postLogin(Request $request)
    {

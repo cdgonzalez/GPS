@@ -74,7 +74,7 @@
             <ul class="collapsible grey darken-3">
 
             <li class="pink lighten-4"><a class="modal-trigger" href="#sesion"><i class="material-icons left ">account_circle</i>Iniciar Sesión</a></li>
-            <li class="blue"><a class="modal-trigger" href=""><i class="material-icons left ">person</i>Mis Consejales</a></li>
+            <li class="blue"><a href="consejales"><i class="material-icons left ">person</i>Mis Consejales</a></li>
             </ul>
         </div>
     </ul>
